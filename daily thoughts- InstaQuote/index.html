@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>daily thoughts- InstaQuote</title>
+    <meta property="og:title" content="Daily Thought - InstaQuote">
+    <meta property="og:description" content="Read and share today's inspirational thought!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="quote-card">
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <div class="category-selector" id="categories"></div>
+        
+        <div class="quote-text" id="quote-text">Wait, idea is loading...</div>
+        <div class="quote-author" id="quote-author"></div>
+        
+        <div class="controls">
+            <button onclick="getNewQuote()">
+                <i class="fas fa-sync-alt"></i>
+               Ni idea
+            </button>
+            <button onclick="shareQuote()">
+                <i class="fas fa-share"></i>
+               share
+            </button>
+            <button onclick="toggleFavorite()" id="favoriteBtn">
+                <i class="far fa-heart"></i>
+                
+              Like
+            </button>
+        </div>
+    </div>
+
+    <script src="main.js"> </script>
+</body>
+</html>

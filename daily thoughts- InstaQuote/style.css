@@ -1,0 +1,170 @@
+        :root {
+            --primary: #2c3e50;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --text: #2d3436;
+            --card-bg: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            font-family: 'Hind Siliguri', sans-serif;
+            color: var(--text);
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .dark-mode {
+            --bg: #2d3436;
+            --text: #f8f9fa;
+            --card-bg: #3a4042;
+        }
+
+        .quote-card {
+            background: var(--card-bg);
+            max-width: 680px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transform: translateY(0);
+            opacity: 1;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quote-card.loading {
+            opacity: 0.5;
+            transform: translateY(10px);
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            position: relative;
+            font-weight: 500;
+            text-align: justify;
+        }
+
+        .quote-text::before {
+            content: open-quote;
+            font-size: 4rem;
+            position: absolute;
+            left: -30px;
+            top: -20px;
+            opacity: 0.2;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 35px;
+            text-align: right;
+            font-style: italic;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 0 20px 20px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.5s linear;
+        }
+
+        .category-selector {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.1); /* Darker background for visibility */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Border for contrast */
+    font-size: 0.9rem;
+    color: var(--text); /* Ensure text color is visible */
+}
+
+.dark-mode .category-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white; /* Ensure active button text is visible */
+}
+
+        @media (max-width: 768px) {
+            .quote-text {
+                font-size: 1.4rem;
+            }
+            
+            button {
+                flex-grow: 1;
+            }
+        }
+      
+      
